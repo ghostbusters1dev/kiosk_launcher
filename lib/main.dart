@@ -32,6 +32,13 @@ class HomePage extends StatelessWidget{
   final String sqr3f = 'assets/images/sqr3_f.png';
   final String sqr4 = 'assets/images/sqr4_b.png';
   final String sqr4f = 'assets/images/sqr4_f.png';
+  final String paApplication = 'https://application.arla.ai/232586563592972';
+  final String haApplication = 'https://application.arla.ai/232487048110956';
+  final String orientation = 'https://application.arla.ai/232486476527972';
+  final String hHAexchange = 'https://app.hhaexchange.com/identity/account/login';
+  final String workbright = 'https://app.workbright.com/users/sign_in';
+  final String pcPayroll = 'https://www.excelforce.com/client-login';
+  final String navon = 'https://admin.nevvon.com/';
   Widget build(BuildContext context){
     return Scaffold(
       body: Stack(
