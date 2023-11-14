@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:kiosk_launcher/webPageLauncher.dart';
+import 'package:kiosk_launcher/pages/start_page.dart';
+import 'package:kiosk_launcher/pages/webPageLauncher.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 void main() async {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveSizer(builder: (context, orientation, deviceType){
       return MaterialApp(
-        home: HomePage(),
+        home: StartPage(),
       );
     }
     );
@@ -69,10 +70,10 @@ class HomePage extends StatelessWidget{
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      CustomTile(title: 'HHAexchange',url: 'https://app.hhaexchange.com/identity/account/login', backgroundImage: sqr1, frontOverlayImage:  'assets/images/sqr1_f.png',),
-                      CustomTile(title: 'Work bright',url: 'https://app.workbright.com/users/sign_in', backgroundImage: sqr2, frontOverlayImage: sqr2f,),
-                      CustomTile(title: 'PC Payroll',url: 'https://www.excelforce.com/client-login', backgroundImage: sqr3, frontOverlayImage: sqr3f,),
-                      CustomTile(title: 'Nevvon',url: 'https://admin.nevvon.com/', backgroundImage: sqr4, frontOverlayImage: sqr4f,)
+                      CustomTile(title: 'HHAexchange',url: 'https://app.hhaexchange.com/identity/account/login', backgroundImage: sqr1, frontOverlayImage:  'assets/images/sqr1_f.png',isweb: true),
+                      CustomTile(title: 'Work bright',url: 'https://app.workbright.com/users/sign_in', backgroundImage: sqr2, frontOverlayImage: sqr2f,isweb: true),
+                      CustomTile(title: 'PC Payroll',url: 'https://www.excelforce.com/client-login', backgroundImage: sqr3, frontOverlayImage: sqr3f,isweb: true),
+                      CustomTile(title: 'Nevvon',url: 'https://admin.nevvon.com/', backgroundImage: sqr4, frontOverlayImage: sqr4f,isweb: true,)
                     ],
                   ),
                   SizedBox(height: 2.h,),
@@ -102,12 +103,17 @@ class CustomTile extends StatelessWidget {
   final String frontOverlayImage;
   final String title;
   final String url;
-  CustomTile({required this.title,required this.url,required this.backgroundImage, required this.frontOverlayImage});
+  final bool isweb;
+  var nav;
+  CustomTile({required this.title,required this.url,required this.backgroundImage, required this.frontOverlayImage,required this.isweb,this.nav});
   Widget build(BuildContext context) {
     return Center(
       child: InkWell(
         onTap: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context) => WebPageLaucnher(url: url),));
+          if(isweb == true){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => WebPageLaucnher(url: url),));} else if(isweb == false){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => nav,));
+          }
     },
         child: Container(
           height:200, // Set the desired height
