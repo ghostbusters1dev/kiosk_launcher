@@ -5,7 +5,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import '../utils/strings.dart';
 import 'employee_page.dart';
 
-class Option1 extends StatelessWidget{
+class Option2 extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -48,15 +48,8 @@ class Option1 extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CustomTile(
-                          title: 'Already an employee',
-                          url:'',
-                          backgroundImage: Strings.sqr1,
-                          frontOverlayImage: 'assets/images/sqr1_f.png',
-                          isweb: false,
-                          nav: const HomePage()),
-                      CustomTile(
                         title: 'Application',
-                        url: Strings.haApplication,
+                        url: Strings.paApplication,
                         backgroundImage: Strings.sqr2,
                         frontOverlayImage: Strings.sqr2f,
                         isweb: true,
@@ -72,10 +65,10 @@ class Option1 extends StatelessWidget{
                   ),
                   SizedBox(height: 20.h,),
                   Row(
-                    children: [
-                      IconButton(onPressed: (){
-                        Navigator.of(context).pop();
-                      }, icon: Icon(Icons.arrow_back,color: Colors.white,size: 50,))])
+                      children: [
+                        IconButton(onPressed: (){
+                          Navigator.of(context).pop();
+                        }, icon: Icon(Icons.arrow_back,color: Colors.white,size: 50,))])
                 ],
               ),
             ],

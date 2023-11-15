@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kiosk_launcher/pages/option1.dart';
+import 'package:kiosk_launcher/pages/option2.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../main.dart';
@@ -64,7 +65,7 @@ class StartPage extends StatelessWidget {
 
                         frontOverlayImage: Strings.sqr2f,
                         isweb: false,
-                        nav: const HomePage(),
+                        nav:  Option2(),
                       )
                     ],
                   ),
