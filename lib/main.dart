@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kiosk_launcher/pages/start_page.dart';
+import 'package:kiosk_launcher/utils/strings.dart';
 import 'package:kiosk_launcher/webpage_launcher.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -27,21 +28,6 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  final String sqr1 = 'assets/images/sqr1_b.png';
-  final String sqr2 = 'assets/images/sqr2_b.png';
-  final String sqr2f = 'assets/images/sqr2_f.png';
-  final String sqr3 = 'assets/images/sqr3_b.png';
-  final String sqr3f = 'assets/images/sqr3_f.png';
-  final String sqr4 = 'assets/images/sqr4_b.png';
-  final String sqr4f = 'assets/images/sqr4_f.png';
-  final String paApplication = 'https://application.arla.ai/232586563592972';
-  final String haApplication = 'https://application.arla.ai/232487048110956';
-  final String orientation = 'https://application.arla.ai/232486476527972';
-  final String hHAexchange =
-      'https://app.hhaexchange.com/identity/account/login';
-  final String workbright = 'https://app.workbright.com/users/sign_in';
-  final String pcPayroll = 'https://www.excelforce.com/client-login';
-  final String navon = 'https://admin.nevvon.com/';
 
   const HomePage({super.key});
   @override
@@ -90,26 +76,26 @@ class HomePage extends StatelessWidget {
                           title: 'HHAexchange',
                           url:
                               'https://app.hhaexchange.com/identity/account/login',
-                          backgroundImage: sqr1,
+                          backgroundImage: Strings.sqr1,
                           frontOverlayImage: 'assets/images/sqr1_f.png',
                           isweb: true),
                       CustomTile(
                           title: 'Work bright',
-                          url: 'https://app.workbright.com/users/sign_in',
-                          backgroundImage: sqr2,
-                          frontOverlayImage: sqr2f,
+                          url: Strings.workbright,
+                          backgroundImage: Strings.sqr2,
+                          frontOverlayImage: Strings.sqr2f,
                           isweb: true),
                       CustomTile(
                           title: 'PC Payroll',
-                          url: 'https://www.excelforce.com/client-login',
-                          backgroundImage: sqr3,
-                          frontOverlayImage: sqr3f,
+                          url: Strings.pcPayroll,
+                          backgroundImage: Strings.sqr3,
+                          frontOverlayImage: Strings.sqr3f,
                           isweb: true),
                       CustomTile(
                         title: 'Nevvon',
-                        url: 'https://admin.nevvon.com/',
-                        backgroundImage: sqr4,
-                        frontOverlayImage: sqr4f,
+                        url: Strings.navon,
+                        backgroundImage: Strings.sqr4,
+                        frontOverlayImage: Strings.sqr4f,
                         isweb: true,
                       )
                     ],
