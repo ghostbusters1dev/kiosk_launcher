@@ -1,14 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kiosk_launcher/pages/option1.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import '../main.dart';
 import '../utils/strings.dart';
 import 'employee_page.dart';
 
-class StartPage extends StatelessWidget {
-  const StartPage({super.key});
-  @override
+class Option1 extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -40,7 +37,7 @@ class StartPage extends StatelessWidget {
                 height: 20.h,
                 color: Colors.white,
                 child:
-                    Center(child: Image.asset('assets/images/pellacare.png')),
+                Center(child: Image.asset('assets/images/pellacare.png')),
               ),
               SizedBox(
                 height: 5.h,
@@ -51,23 +48,28 @@ class StartPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CustomTile(
-                          title: 'Option 1',
+                          title: 'Already an employee',
                           url:'',
                           backgroundImage: Strings.sqr1,
                           frontOverlayImage: 'assets/images/sqr1_f.png',
                           isweb: false,
-                          nav:  Option1()),
+                          nav: const HomePage()),
                       CustomTile(
-                        title: 'Option 2',
-                        url: 'https://app.workbright.com/users/sign_in',
+                        title: 'Application',
+                        url: Strings.haApplication,
                         backgroundImage: Strings.sqr2,
-
                         frontOverlayImage: Strings.sqr2f,
-                        isweb: false,
+                        isweb: true,
                         nav: const HomePage(),
                       )
                     ],
                   ),
+                  SizedBox(height: 20.h,),
+                  Row(
+                    children: [
+                      IconButton(onPressed: (){
+                        Navigator.of(context).pop();
+                      }, icon: Icon(Icons.arrow_back,color: Colors.white,size: 50,))])
                 ],
               ),
             ],
