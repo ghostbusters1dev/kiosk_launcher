@@ -44,42 +44,53 @@ class Option1 extends StatelessWidget{
               ),
               Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CustomTile(
-                          title: 'Already an employee',
-                          url:'',
-                          backgroundImage: Strings.sqr1,
-                          frontOverlayImage: 'assets/images/sqr1_f.png',
-                          isweb: false,
-                          nav: const HomePage()),
-                      CustomTile(
-                        title: 'Application',
-                        url: Strings.haApplication,
-                        backgroundImage: Strings.sqr2,
-                        frontOverlayImage: Strings.sqr2f,
-                        isweb: true,
-                        nav: const HomePage(),
-                      ),
-                      CustomTile(
-                          title: 'Orientation',
-                          url: Strings.orientation,
-                          backgroundImage: Strings.sqr3,
-                          frontOverlayImage: Strings.sqr3f,
-                          isweb: true),
-                    ],
+                  Container(
+                    width: MediaQuery.sizeOf(context).width,
+                    height: 50.h,
+                    child: GridView.count(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 10,
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      children: [
+                        CustomTile(
+                            title: 'Already an employee',
+                            url:'',
+                            backgroundImage: Strings.sqr1,
+                            frontOverlayImage: 'assets/images/sqr1_f.png',
+                            isweb: false,
+                            nav: const HomePage()),
+                        CustomTile(
+                          title: 'Application',
+                          url: Strings.haApplication,
+                          backgroundImage: Strings.sqr2,
+                          frontOverlayImage: Strings.sqr2f,
+                          isweb: true,
+                          nav: const HomePage(),
+                        ),
+                        CustomTile(
+                            title: 'Orientation',
+                            url: Strings.orientation,
+                            backgroundImage: Strings.sqr3,
+                            frontOverlayImage: Strings.sqr3f,
+                            isweb: true),
+
+                        Row(
+                              children: [
+                                IconButton(onPressed: (){
+                                  Navigator.of(context).pop();
+                                }, icon: Icon(Icons.arrow_back,color: Colors.white,size: 50,))]),
+
+
+                      ],
+                    ),
                   ),
-                  SizedBox(height: 20.h,),
-                  Row(
-                    children: [
-                      IconButton(onPressed: (){
-                        Navigator.of(context).pop();
-                      }, icon: Icon(Icons.arrow_back,color: Colors.white,size: 50,))])
+                  // SizedBox(height: 20.h,),
                 ],
               ),
             ],
-          )
+          ),
+
         ],
       ),
     );

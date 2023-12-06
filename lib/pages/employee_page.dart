@@ -46,7 +46,47 @@ class HomePage extends StatelessWidget {
               ),
               Column(
                 children: [
-                  Row(
+                  MediaQuery.sizeOf(context).width<800?
+                      Column(children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            CustomTile(
+                                title: 'HHAexchange',
+                                url:
+                                'https://app.hhaexchange.com/identity/account/login',
+                                backgroundImage: Strings.sqr1,
+                                frontOverlayImage: 'assets/images/sqr1_f.png',
+                                isweb: true),
+                            CustomTile(
+                                title: 'Work bright',
+                                url: Strings.workbright,
+                                backgroundImage: Strings.sqr2,
+                                frontOverlayImage: Strings.sqr2f,
+                                isweb: true),
+                          ],
+                        ),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                          CustomTile(
+                              title: 'PC Payroll',
+                              url: Strings.pcPayroll,
+                              backgroundImage: Strings.sqr3,
+                              frontOverlayImage: Strings.sqr3f,
+                              isweb: true),
+                          CustomTile(
+                            title: 'Nevvon',
+                            url: Strings.navon,
+                            backgroundImage: Strings.sqr4,
+                            frontOverlayImage: Strings.sqr4f,
+                            isweb: true,
+                          )
+                        ],)
+                      ],)
+
+                      :Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CustomTile(
@@ -89,7 +129,7 @@ class HomePage extends StatelessWidget {
                   //     textAlign: TextAlign.start,
                   //   ),
                 //  ),
-                  SizedBox(height: 20.h,),
+                  //SizedBox(height: 20.h,),
                   Row(
                     children: [
                       IconButton(onPressed: (){
@@ -198,7 +238,7 @@ class CustomTile extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 19.h,
+                          height: 16.h,
                         ),
                         Image.asset(
                           frontOverlayImage,
