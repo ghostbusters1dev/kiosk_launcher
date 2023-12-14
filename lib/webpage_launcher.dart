@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_pro/webview_flutter.dart';
 
-class WebPageLaucnher extends StatelessWidget {
+class WebPageLaucnher extends StatefulWidget {
   final String url;
   const WebPageLaucnher({super.key, required this.url});
+
+  @override
+  State<WebPageLaucnher> createState() => _WebPageLaucnherState();
+}
+
+class _WebPageLaucnherState extends State<WebPageLaucnher> {
+
+  @override
+  void initState(){
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,9 +32,18 @@ class WebPageLaucnher extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
       ),
-      body: WebView(
-        initialUrl: url,
-        javascriptMode: JavascriptMode.unrestricted,
+      body: Stack(
+        children: [
+          Container(
+            width: MediaQuery.sizeOf(context).width,
+            height: MediaQuery.sizeOf(context).height,
+            child: Center(child: CircularProgressIndicator.adaptive()),
+          ),
+          WebView(
+            initialUrl: widget.url,
+            javascriptMode: JavascriptMode.unrestricted,
+          ),
+        ],
       ),
     );
   }
